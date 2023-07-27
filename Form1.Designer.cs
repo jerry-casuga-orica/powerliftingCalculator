@@ -44,6 +44,7 @@
             dotsLabel = new Label();
             maleButton = new RadioButton();
             femaleButton = new RadioButton();
+            errorLabel = new Label();
             SuspendLayout();
             // 
             // infoLabel
@@ -133,11 +134,11 @@
             // 
             // calculateButton
             // 
-            calculateButton.Location = new Point(112, 337);
+            calculateButton.Location = new Point(62, 338);
             calculateButton.Name = "calculateButton";
-            calculateButton.Size = new Size(133, 59);
+            calculateButton.Size = new Size(262, 59);
             calculateButton.TabIndex = 9;
-            calculateButton.Text = "Calculate";
+            calculateButton.Text = "Calculate Scores";
             calculateButton.UseVisualStyleBackColor = true;
             calculateButton.Click += calculateButton_Click;
             // 
@@ -206,11 +207,21 @@
             femaleButton.UseVisualStyleBackColor = true;
             femaleButton.CheckedChanged += radioButton2_CheckedChanged;
             // 
+            // errorLabel
+            // 
+            errorLabel.AutoSize = true;
+            errorLabel.Location = new Point(462, 357);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(0, 20);
+            errorLabel.TabIndex = 18;
+            errorLabel.Click += label7_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(errorLabel);
             Controls.Add(femaleButton);
             Controls.Add(maleButton);
             Controls.Add(dotsLabel);
@@ -252,5 +263,6 @@
         private Label dotsLabel;
         private RadioButton maleButton;
         private RadioButton femaleButton;
+        private Label errorLabel;
     }
 }

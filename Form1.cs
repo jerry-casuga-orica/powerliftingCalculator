@@ -2,7 +2,6 @@ namespace StrengthCalculator
 {
     public partial class Form1 : Form
     {
-        private double weightLifted;
 
         public Form1()
         {
@@ -71,8 +70,8 @@ namespace StrengthCalculator
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            int sum = 0;
-            if (int.TryParse(squatTotal.Text, out int num2) && int.TryParse(benchTotal.Text, out int num3) && int.TryParse(deadliftTotal.Text, out int num4))
+            double sum = 0;
+            if (double.TryParse(squatTotal.Text, out double num2) && double.TryParse(benchTotal.Text, out double num3) && double.TryParse(deadliftTotal.Text, out double num4))
             {
                 sum = num2 + num3 + num4;
                 result.Text = $"{sum}kg total";
@@ -95,7 +94,15 @@ namespace StrengthCalculator
             }
             double score = (500 / denominator) * sum;
 
-            dotsLabel.Text = score.ToString();
+            if (!femaleButton.Checked && !maleButton.Checked)
+            {
+                errorLabel.Text = "Bruh, select a gender";
+            }
+            else
+            {
+                dotsLabel.Text = score.ToString();
+                errorLabel.Text = "";
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -142,6 +149,11 @@ namespace StrengthCalculator
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
